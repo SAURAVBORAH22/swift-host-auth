@@ -10,5 +10,5 @@ export const environment = {
     measurementId: "G-VC3QWDBR7Y"
   },
   sellerAppUrl: 'http://localhost:4201',
-  clientAppUrl: 'http://localhost:4200'
+  clientAppUrl: 'https://swifthost-saurav-borahs-projects.vercel.app'
 };
