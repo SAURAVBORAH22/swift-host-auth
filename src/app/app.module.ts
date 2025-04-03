@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ToastComponent } from './shared/modals/toast/toast.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
     AppComponent,
     LoginComponent,
     SignupComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,

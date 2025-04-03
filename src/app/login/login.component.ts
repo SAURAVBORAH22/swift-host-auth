@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
+import { ToastService } from '../services/toast.service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage: string = '';
 
-  constructor(private fb: FormBuilder, private authService: AuthService) {
+  constructor(private fb: FormBuilder, private authService: AuthService, private toastService:ToastService) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
     try {
       await this.authService.login(email, password, role);
     } catch (error: any) {
-      this.errorMessage = error.message;
+      this.toastService.showToast('Error occured while logging in. Please try again.', 'error');
     }
   }
 
@@ -44,7 +45,7 @@ export class LoginComponent implements OnInit {
     try {
       await this.authService.googleLogin(role);
     } catch (error: any) {
-      this.errorMessage = error.message;
+      this.toastService.showToast('Error occured while logging in. Please try again.', 'error');
     }
   }
 }
