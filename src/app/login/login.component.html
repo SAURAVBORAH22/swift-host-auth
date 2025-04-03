@@ -1,0 +1,35 @@
+<div class="auth-wrapper">
+    <div class="auth-image">
+        <img src="../../assets/img/ecommerce image.webp" alt="Phone with cart" />
+    </div>
+    <div class="auth-form">
+        <h2>Welcome Back</h2>
+        <p>Please log in to continue</p>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your email" formControlName="email" />
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter your password" formControlName="password" />
+            </div>
+            <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                    <input type="checkbox" formControlName="seller" />
+                    Login as Seller
+                </label>
+            </div>
+            <button type="submit" class="btn-primary">Log In</button>
+        </form>
+        <button (click)="onGoogleLogin()" class="btn-google">
+            <img src="assets/google-icon.png" alt="Google" />
+            Login with Google
+        </button>
+        <div class="auth-footer">
+            <span>Don't have an account?</span>
+            <a routerLink="/signup">Sign Up</a>
+        </div>
+        <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    </div>
+</div>

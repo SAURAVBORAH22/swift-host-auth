@@ -1,0 +1,109 @@
+.auth-wrapper {
+    display: flex;
+    min-height: 100vh;
+    background: #fafafa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .auth-image {
+        flex: 1;
+        background: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+    }
+
+    .auth-form {
+        flex: 1;
+        background: #f7f7f7;
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        form {
+            .form-group {
+                margin-bottom: 1.5rem;
+
+                label {
+                    display: block;
+                    font-weight: 600;
+                    margin-bottom: 0.5rem;
+                    color: #555;
+                }
+
+                input,
+                select {
+                    width: 100%;
+                    padding: 0.75rem;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 1rem;
+
+                    &:focus {
+                        border-color: #007bff;
+                        outline: none;
+                    }
+                }
+            }
+
+            .btn-primary {
+                width: 100%;
+                padding: 0.75rem;
+                background: #007bff;
+                border: none;
+                color: #fff;
+                font-size: 1rem;
+                border-radius: 4px;
+                cursor: pointer;
+                transition: background 0.3s;
+
+                &:hover {
+                    background: #0056b3;
+                }
+            }
+        }
+
+        .auth-footer {
+            margin-top: 1.5rem;
+            text-align: center;
+
+            span {
+                color: #666;
+            }
+
+            a {
+                color: #007bff;
+                text-decoration: none;
+                margin-left: 0.5rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .error {
+            margin-top: 1rem;
+            color: red;
+            text-align: center;
+        }
+    }
+}
